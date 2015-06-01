@@ -1,0 +1,16 @@
+/* CSS Document */
+
+div#toolbar-box {
+  float: left;
+  width: 100%;
+}
+
+#minwidth, #minwidth-body {width:expression(document.body.clientWidth <= 960? "960px": "auto"); }
+
+#content-box {
+	float: left;
+}
+
+input { height: 19px;
+}
+
