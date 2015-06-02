@@ -63,6 +63,7 @@ function OpenMenuLevel2_1(div,id) {
     html = html + '	                        <ul class="subNav">	';
     html = html + '	                            <li><a onclick="sys_LoadPage(\'Lst_Contents.htm\');" title=""><span class="icos-frames"></span>Danh sách</a></li>	';
     html = html + '	                            <li><a onclick="sys_LoadPage(\'Lst_Sinhvien.htm\');" title=""><span class="icos-frames"></span>Danh sách sinh vien</a></li>	';
+    html = html + '	                            <li><a onclick="sys_LoadPage(\'Ins_Sinhvien.htm\');" title=""><span class="icos-frames"></span>Them sinh vien</a></li>	';
     html = html + '	                            <li><a onclick="sys_LoadPage(\'Ins_Contents.htm\');" title=""><span class="icos-frames"></span>{sys_GetText_Static(39,\'mặc định\')}</a></li>	';
     html = html + '	                            <li><a onclick="alert(\'xxxxx\');" title="" ><span class="icos-refresh"></span>{sys_GetText(100,\'XXX\')}</a></li>	';
     html = html + '	                            <li><a href="/PagesAspx/CategoryLevel2_Manager.aspx" title=""><span class="icos-bullseye"></span>{sys_GetText_Static(10,\'XXX\')}</a></li>	';

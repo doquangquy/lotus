@@ -29,6 +29,9 @@ namespace ActionHandler
                    this.Sel_ByAll(context);
                       
                        break;
+                   case "Ins":
+                       this.Ins(context);
+                       break;
                    default:
                        context.Response.Write("Can't find action");
                        break;
@@ -59,22 +62,37 @@ namespace ActionHandler
         public void Ins( HttpContext context)
        {
            ConfigsBO aConfigsBO = new ConfigsBO(); // ko hieu de lam cai gi
-           string Jsonstring = "";
+           int ret = -1;
+           string jSonString = "";
            try
            {
-               List<Sinhvien> aListsinhvien = new List<Sinhvien>();
+
                Sinhvien aSinhvien = new Sinhvien();
                aSinhvien = new Sinhvien();
-               //aSinhvien.Hoten=
-            
+               aSinhvien.Hoten = !String.IsNullOrEmpty(context.Request.Form["txthoten"]) ? Convert.ToString(context.Request.Form["txthoten"]) : "";
+               aSinhvien.Diachi = !String.IsNullOrEmpty(context.Request.Form["txtdiachi"]) ? Convert.ToString(context.Request.Form["txtdiachi"]) : "";
+               aSinhvien.Tuoi = !String.IsNullOrEmpty(context.Request.Form["txttuoi"]) ? Convert.ToInt32(context.Request.Form["txttuoi"]) : 0;
 
+               SinhvienBO aSinhvienBO = new SinhvienBO();
+
+               ret = aSinhvienBO.Ins(aSinhvien);
+               if (ret != 0)
+               {
+                   jSonString = "{\"status\":\"error|" + ret.ToString() + "\"}";
+               }
+               else
+               {
+                   jSonString = "{\"status\":\"success|\"}";
+               }
            }
-           catch (Exception)
+           catch (Exception ex)
            {
-               
-               throw;
+               jSonString = "{\"status\":\"error\" ,\"message\":\"" + ex.Message.ToString() + "\"}";
            }
-
+           finally {
+                context.Response.Write(jSonString);
+            }
+       
        }
        
     }

@@ -26,4 +26,10 @@
     
 
 
+}// hien thi du lieu len grid
+//  thêm dữ liệu vào trong database
+function InsertSinhVien() {
+    
+    SinhviensBO.Ins();
 }
+//alert("process");

@@ -2637,6 +2637,7 @@
     <Content Include="New folder\tables_dynamic - Copy.html" />
     <Content Include="New folder\tables_dynamic.html" />
     <Content Include="Main.aspx" />
+    <Content Include="Templates\Ins_Sinhvien.htm" />
     <Content Include="Templates\Lst_Sinhvien.htm" />
     <Content Include="Templates\Lst_Contents.htm" />
     <Content Include="Templates\Ins_CategoryLevel2-1.htm" />
